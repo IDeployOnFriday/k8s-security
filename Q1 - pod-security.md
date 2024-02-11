@@ -18,3 +18,17 @@ kubectl edit role -n sunnydale buffy-role
    verbs:
    - 'list'
    ```
+
+   # Create a New Role and Attach It to the Service Account
+
+   ```
+   vi watch-services-secrets.yml
+   ```
+   ```
+   rules:
+- apiGroups: [""]
+  resources: ["services", "secrets"]
+  verbs: ["watch"]
+  ```
+
+  
