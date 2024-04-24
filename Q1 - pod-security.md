@@ -1,7 +1,7 @@
 
 # describe the role binding 
 ```
-kubectl get rolebinding -n sunnydale
+kubectl get rolebinding -n sunnydale -o yaml 
 ```
 
 # edit the role 
@@ -22,7 +22,7 @@ kubectl edit role -n sunnydale buffy-role
    # Create a New Role and Attach It to the Service Account
 
    ```
-   vi watch-services-secrets.yml
+   vi /home/cloud_user/watch-services-secrets.yml
    ```
    ```
    rules:
@@ -30,5 +30,9 @@ kubectl edit role -n sunnydale buffy-role
   resources: ["services", "secrets"]
   verbs: ["watch"]
   ```
+
+# bind the service account to the role 
+
+
 
   
