@@ -33,6 +33,22 @@ kubectl edit role -n sunnydale buffy-role
 
 # bind the service account to the role 
 
+```
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: buffy-sa-watch-rb
+  namespace: sunnydale
+subjects:
+- kind: ServiceAccount
+  name: buffy-sa
+  namespace: sunnydale
+roleRef:
+  kind: Role
+  name: watch-services-secrets
+  apiGroup: rbac.authorization.k8s.io
+```
+
 
 
 
