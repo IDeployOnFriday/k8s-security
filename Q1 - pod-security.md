@@ -34,6 +34,10 @@ kubectl edit role -n sunnydale buffy-role
 # bind the service account to the role 
 
 ```
+  k create rolebinding buffy-sa-watch-rb --role=watch-services-secrets --serviceaccount=sunnydale:buffy-sa -n sunnydale
+```
+
+```
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
@@ -48,10 +52,6 @@ roleRef:
   name: watch-services-secrets
   apiGroup: rbac.authorization.k8s.io
 ```
-
-
-
-
 
 # Fix a Pod Configured to Use an Incorrect Service Account
 
